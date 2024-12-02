@@ -46,7 +46,42 @@ public class Main {
 
         }
         if(input==3){
-            //....
+            System.out.println("Start Registering:");
+            System.out.print("Name:");
+            String name=scanner.next();
+            System.out.print("Surname:");
+            String surname=scanner.next();
+            System.out.print("Social Security Number:");
+            String SSN=scanner.next();
+            System.out.print("Age:");
+            int age=scanner.nextInt();
+            Customer object1=new Customer(name,surname,SSN,age);
+            System.out.println("Which Insurance would you like to acquire- ");
+            String input1=scanner.next();
+            if(input1.equals("Auto Insurance")){
+                int carAge=scanner.nextInt();
+                int carPrice=scanner.nextInt();
+                AutoInsurance object=new AutoInsurance(carAge,carPrice);
+                object.bill();
+                object.packageInfo();
+            }
+            if(input1.equals("Healthcare Insurance")){
+                int salary=scanner.nextInt();
+                int age1=scanner.nextInt();
+                boolean foreignInsurance=scanner.nextBoolean();
+                Healthcare object=new Healthcare(salary,age1,foreignInsurance);
+                object.bill();
+                object.packageInfo();
+            }
+            if(input1.equals("Travel Insurance")){
+                int days=scanner.nextInt();;
+                int personSum=scanner.nextInt();;
+                boolean baggageInsurance=scanner.nextBoolean();;
+                TravelInsurance object=new TravelInsurance(days,personSum,baggageInsurance);
+                object.bill();
+                object.packageInfo();
+
+            }
         }
         if(input==4){
             int n=scanner.nextInt();
@@ -81,10 +116,6 @@ public class Main {
 
 
         }
-        //test test
-
-
-
 
 
 
